@@ -1,0 +1,17 @@
+name: Test GitHub actions workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: [homelab]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Display github.ref_name variable
+        run: echo ${{ github.ref_name }}
