@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: [self-hosted]
+    runs-on: [dev-k8s]
     steps:
       - uses: actions/checkout@v3
       - name: Display github.ref_name variable
