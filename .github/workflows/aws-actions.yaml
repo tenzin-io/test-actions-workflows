@@ -1,0 +1,20 @@
+name: Test aws-actions
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::130900203380:role/tenzin-io.test-actions-workflows
+          aws-region: us-east-1
