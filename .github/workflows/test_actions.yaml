@@ -1,4 +1,4 @@
-name: Test GitHub actions workflow
+name: Test vault-action
 
 on:
   push:
@@ -10,8 +10,12 @@ on:
 
 jobs:
   build:
-    runs-on: [dev-k8s]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Display github.ref_name variable
-        run: echo ${{ github.ref_name }}
+
+      - name: Access Vault
+        with:
+          url: https://vault.tenzin.io
+          method: jwt
+          role: tenzin-io.test-actions-workflows
