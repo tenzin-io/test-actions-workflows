@@ -18,4 +18,4 @@ jobs:
         with:
           url: https://vault.tenzin.io
           method: jwt
-          role: tenzin-io.test-actions-workflows
+          role: github
